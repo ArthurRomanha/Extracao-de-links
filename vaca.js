@@ -8,4 +8,4 @@ function extraiLinks(texto) {
     const possiveisLinks = texto.match(/https?:\/\/[^\s]+/gi) || [];
     console.log(possiveisLinks);
 }
-possiveisLinks(text);
+extraiLinks(text);
