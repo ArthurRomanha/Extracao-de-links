@@ -1,8 +1,3 @@
-
-// Teste seu código:
-// Crie 2 livros diferentes, empreste um deles e tente emprestar o mesmo
-// livro novamente (deve dar erro).
-
 class Livro {
     #autor
     #titulo
@@ -23,10 +18,10 @@ class Livro {
         }
     }
     getInfo(){
-        if (this.#disponivel == false) {
-            console.log(`O livro ${this.#titulo}, do autor: ${this.#autor} está indisponível`);            
+        if (this.#disponivel) {
+            console.log(`O livro ${this.#titulo}, do autor: ${this.#autor} está disponível`);
         }else{
-            console.log(`Livro disponível`);
+            console.log(`O livro ${this.#titulo}, do autor: ${this.#autor} está disponível`);
         }
     }
     isDisponivel(){
@@ -39,8 +34,18 @@ class Livro {
 }
 
 const livro1 = new Livro("Harry Potter", "J. K. Rowling");
-console.log(livro1.getInfo());
+livro1.getInfo();
 livro1.emprestar();
 console.log(livro1.isDisponivel()); // false
 livro1.devolver();
 console.log(livro1.isDisponivel()); // true
+
+console.log("==================");
+const livro2 = new Livro("O Mundo de Sophia", "Jostein Gaarder");
+livro2.getInfo();
+
+console.log("==================");
+const livro3 = new Livro("O Menino Maluquinho", "Ziraldo");
+livro3.emprestar();
+livro3.emprestar();
+livro3.getInfo();
